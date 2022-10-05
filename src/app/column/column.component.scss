@@ -1,0 +1,85 @@
+@keyframes apparition{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 24rem;
+  }
+}
+
+@keyframes apparition-task{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 3rem;
+  }
+}
+
+.column{
+  overflow: hidden;
+  position: relative;
+  margin: 0 0.5rem;
+  font-family: font1;
+  width: 24rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0.2rem;
+  background: lighten(#70a1ff,22);
+  animation: 1s apparition;
+  overflow-y: scroll;
+  h2{
+    margin: 0;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    color: darken(#70a1ff, 50);
+    text-align: center;
+  }
+}
+.input-container{
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem;
+
+  input{
+    width: 100%;
+  }
+}
+
+.task{
+  animation: apparition-task 0.5s;
+  background: white;
+  margin: 0.3rem 0.5rem;
+  padding: 0.5rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 1.2rem;
+  div{
+    width: 100%;
+    .taskDelete{
+      margin-left: auto;
+    }
+  }
+}
+.btnDelete{
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  color: darken(#70a1ff, 50);;
+  &:hover{
+    color: red;
+    transition: all 0.5s;
+  }
+}
+.taskDelete{
+  font-weight: bold;
+  &:hover{
+    color: red;
+    transition: all 0.5s;
+  }
+}

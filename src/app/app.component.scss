@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'font1';
+  src: url("../assets/fonts/font1.ttf");
+}
+
+h1 {
+  font-family: 'font1';
+  text-align: center;
+  color: darken(#70a1ff, 50);
+}
+
+body {
+  font-size: 62.5%;
+}
+
+body, h1, label {
+  font-family: 'font1', sans-serif;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+label {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: darken(#70a1ff, 50);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 2rem;
+  max-width: 100vw;
+  overflow-y: scroll;
+  padding: 1rem 0;
+  flex: 1 1 auto;
+  background: white;
+  border-top: 2px solid whitesmoke;
+}
