@@ -1,10 +1,15 @@
-<div class="column">
+<div class="column"
+     cdkDropList
+     #list="cdkDropList"
+     [cdkDropListData]="tasks"
+     (cdkDropListDropped)="drop($event)"
+>
   <a (click)="deleteColumn(column.id)" class="btnDelete" href="#"><i class="bi bi-x-circle"></i></a>
   <h2>{{column.name}} ({{tasks.length}})</h2>
   <div class="input-container">
     <input (keydown.enter)="addTask()" type="text" [(ngModel)]="task.name"><button (click)="addTask()" class=""><i class="bi bi-plus-lg"></i></button>
   </div>
-  <div class="task" *ngFor="let tsk of tasks">
+  <div class="task" *ngFor="let tsk of tasks" cdkDrag>
     <div class="d-flex">{{ tsk.name }}
       <a (click)="deleteTask(tsk.id)" class="taskDelete" href="#">
         <i class="bi bi-x-lg"></i>

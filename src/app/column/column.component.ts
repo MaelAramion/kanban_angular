@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Column} from "../column";
 import {Task} from "../task";
 import {KanbanService} from "../kanban.service";
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-column',
@@ -19,6 +20,8 @@ export class ColumnComponent implements OnInit {
   task : Task = new Task(this.id, "","");
 
 
+  columns : Column[]  = this.kanbanService.getColumns();
+
   addTask(){
     this.tasks.push(this.task);
     this.id++
@@ -35,6 +38,20 @@ export class ColumnComponent implements OnInit {
         this.tasks.splice(key,1);
       }
     });
+  }
+
+  drop(event: CdkDragDrop<Task[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    }else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+
   }
 
   ngOnInit(): void {

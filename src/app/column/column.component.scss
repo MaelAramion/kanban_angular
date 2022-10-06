@@ -48,7 +48,7 @@
 }
 
 .task{
-  animation: apparition-task 0.5s;
+  //animation: apparition-task 0.5s;
   background: white;
   margin: 0.3rem 0.5rem;
   padding: 0.5rem;
@@ -82,4 +82,7 @@
     color: red;
     transition: all 0.5s;
   }
+}
+.cdk-drag-placeholder{
+  opacity: 0;
 }
