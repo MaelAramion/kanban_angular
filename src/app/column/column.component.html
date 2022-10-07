@@ -11,8 +11,9 @@
     <input (keydown.enter)="addTask()" type="text" [(ngModel)]="task.name"><button (click)="addTask()" class=""><i class="bi bi-plus-lg"></i></button>
   </div>
   <div class="task" *ngFor="let tsk of tasks" cdkDrag>
-    <div class="d-flex">{{ tsk.name }}
-      <a (click)="deleteTask(tsk.id)" class="taskDelete" href="#">
+    <div class="d-flex">
+        {{ tsk.name }}
+        <a (click)="deleteTask(tsk.id)" class="taskDelete" href="#">
         <i class="bi bi-x-lg"></i>
       </a>
     </div>

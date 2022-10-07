@@ -36,9 +36,15 @@ $kanban-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+@font-face {
+  font-family: 'font1';
+  src: url("./assets/fonts/font1.ttf");
+}
+
 body{
   margin: 0;
   background: white;
+  font-family: font1, sans-serif;
 }
 input {
   font-size: 1.5rem;
@@ -99,3 +105,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cdk-drag-placeholder{
   opacity: 0;
 }
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  font-family: 'font1', sans-serif !important;
+}
+
