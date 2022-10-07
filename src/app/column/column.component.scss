@@ -27,7 +27,6 @@
   height: 100%;
   border-radius: 0.2rem;
   background: lighten(#70a1ff,22);
-  animation: 1s apparition;
   overflow-y: scroll;
   h2{
     margin: 0;
@@ -48,7 +47,6 @@
 }
 
 .task{
-  //animation: apparition-task 0.5s;
   background: white;
   margin: 0.3rem 0.5rem;
   padding: 0.5rem;
@@ -82,7 +80,4 @@
     color: red;
     transition: all 0.5s;
   }
-}
-.cdk-drag-placeholder{
-  opacity: 0;
 }

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Column} from "./column";
 import { KanbanService } from './kanban.service';
+import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,10 @@ export class AppComponent {
 
   init(){
     this.kanbanService.addColumn(new Column(999,"Backlog"));
+  }
+
+  drop(event: CdkDragDrop<Column[]>) {
+    moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
   }
 
 

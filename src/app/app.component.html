@@ -9,7 +9,7 @@
   </div>
 
 
-  <div cdkDropListGroup class="column-container">
+  <div cdkDropListGroup class="column-container" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
     <app-column *ngFor="let col of columns" [column]=col></app-column>
   </div>
 </div>
