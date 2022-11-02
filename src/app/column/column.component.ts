@@ -31,7 +31,6 @@ export class ColumnComponent implements OnInit {
   task: Task = new Task(this.id, "", "");
   DialogOpen : boolean = false;
 
-
   columns: Column[] = this.kanbanService.getColumns();
 
   addTask(): void {
@@ -73,6 +72,7 @@ export class ColumnComponent implements OnInit {
       );
     }
   }
+
 
   openDialogTask(id: number): void {
 

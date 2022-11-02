@@ -1,10 +1,10 @@
 <h1 mat-dialog-title>Modifier le nom de la {{data.type}} ?</h1>
-<div mat-dialog-content>
-  <mat-form-field appearance="fill">
+<div class="dialog-content" mat-dialog-content>
+  <mat-form-field class="field-container" appearance="fill">
     <mat-label>Nom de la {{data.type}}</mat-label>
     <input matInput [(ngModel)]="data.name">
   </mat-form-field>
-  <mat-form-field appearance="fill" *ngIf="data.type == 'tâche'">
+  <mat-form-field class="field-container" appearance="fill" *ngIf="data.type == 'tâche'">
     <mat-label>Description de la {{data.type}}</mat-label>
     <textarea matInput [(ngModel)]="data.desc">{{data.desc}}</textarea>
   </mat-form-field>
