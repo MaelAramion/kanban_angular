@@ -11,12 +11,14 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { SeeDialogComponent } from './see-dialog/see-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ColumnComponent,
     EditDialogComponent,
+    SeeDialogComponent,
   ],
   imports: [
     BrowserModule,

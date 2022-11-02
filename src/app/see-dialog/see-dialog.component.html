@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Consultation de la tâche</h1>
+<div mat-dialog-content>
+  <p><b>Nom de la tâche</b> : </p>
+  <p>{{ data.name }}</p>
+  <p><b>Description</b> : </p>
+  <p>{{ data.desc }}</p>
+</div>
+<div class="btnDialog" mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button>
+</div>

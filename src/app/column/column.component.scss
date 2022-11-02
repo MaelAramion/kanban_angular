@@ -28,7 +28,7 @@
   border-radius: 0.2rem;
   background: lighten(#70a1ff, 22);
   overflow-y: scroll;
-
+  cursor: grab;
   h2 {
     margin: 0;
     border-radius: 1rem 1rem 0 0;
@@ -89,6 +89,13 @@
 }
 
 .taskEdit {
+  margin-left: 0.5rem;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.SeeTask{
   margin-left: auto;
   &:hover{
     cursor: pointer;

@@ -5,11 +5,13 @@ import {KanbanService} from "../kanban.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {EditDialogComponent} from "../edit-dialog/edit-dialog.component";
+import {SeeDialogComponent} from "../see-dialog/see-dialog.component";
 
 
 export interface DialogData {
   type: string;
   name: string;
+  desc: string;
 }
 
 @Component({
@@ -80,14 +82,16 @@ export class ColumnComponent implements OnInit {
 
       const dialogRef = this.dialog.open(EditDialogComponent, {
         width: '270px',
-        data: {name: task.name, type: "tâche"},
+        data: {name: task.name, type: "tâche", desc: task.desc},
       });
 
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
         if(result != null){
-          task.name = result;
+          task.name = result.name;
+          task.desc = result.desc;
         }
+
         this.DialogOpen = false;
       });
     }
@@ -106,9 +110,27 @@ export class ColumnComponent implements OnInit {
 
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
+        console.log(result);
         if(result != null){
-          column.name = result;
+          column.name = result.name;
         }
+        this.DialogOpen = false;
+      });
+    }
+  }
+
+  openDialogTaskConsult(id: number): void {
+
+    if(!this.DialogOpen){
+      this.DialogOpen = true;
+      let task : Task = this.tasks[this.getTaskkey(id)]
+      const dialogRef = this.dialog.open(SeeDialogComponent, {
+        width: '270px',
+        data: {name: task.name, desc: task.desc},
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
         this.DialogOpen = false;
       });
     }
