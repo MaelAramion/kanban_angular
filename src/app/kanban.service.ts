@@ -25,6 +25,16 @@ export class KanbanService {
     });
   }
 
+  getColumnkey(id: number): number {
+    let columnKey = -1
+    this.columns.forEach((column, key) => {
+      if (column.id == id) {
+        columnKey = key;
+      }
+    });
+    return columnKey;
+  }
+
   constructor() {
   }
 }

@@ -5,17 +5,16 @@
      [cdkDropListData]="tasks"
      (cdkDropListDropped)="drop($event)"
 >
-  <a (click)="deleteColumn(column.id)" class="btnDelete" href="#"><i class="bi bi-x-circle"></i></a>
-  <h2>{{column.name}} ({{tasks.length}})</h2>
+  <a (click)="deleteColumn(column.id)" class="btnDelete"><i class="bi bi-x-circle"></i></a>
+  <h2><a (click)="openDialogColumn(column.id)" class="columnEdit"><i class="bi bi-pencil-square"></i></a> {{column.name}} ({{tasks.length}})</h2>
   <div class="input-container">
     <input (keydown.enter)="addTask()" type="text" [(ngModel)]="task.name"><button (click)="addTask()" class=""><i class="bi bi-plus-lg"></i></button>
   </div>
   <div class="task" *ngFor="let tsk of tasks" cdkDrag>
     <div class="d-flex">
         {{ tsk.name }}
-        <a (click)="deleteTask(tsk.id)" class="taskDelete" href="#">
-        <i class="bi bi-x-lg"></i>
-      </a>
+        <a (click)="openDialogTask(tsk.id)" class="taskEdit"><i class="bi bi-pencil-square"></i></a>
+        <a (click)="deleteTask(tsk.id)" class="taskDelete"><i class="bi bi-x-lg"></i></a>
     </div>
     <div>{{ tsk.desc }}</div>
   </div>

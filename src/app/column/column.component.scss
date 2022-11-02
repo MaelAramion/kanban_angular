@@ -1,22 +1,22 @@
-@keyframes apparition{
-  0%{
+@keyframes apparition {
+  0% {
     width: 0;
   }
-  100%{
+  100% {
     width: 24rem;
   }
 }
 
-@keyframes apparition-task{
-  0%{
+@keyframes apparition-task {
+  0% {
     height: 0;
   }
-  100%{
+  100% {
     height: 3rem;
   }
 }
 
-.column{
+.column {
   overflow: hidden;
   position: relative;
   margin: 0 0.5rem;
@@ -26,9 +26,10 @@
   flex-direction: column;
   height: 100%;
   border-radius: 0.2rem;
-  background: lighten(#70a1ff,22);
+  background: lighten(#70a1ff, 22);
   overflow-y: scroll;
-  h2{
+
+  h2 {
     margin: 0;
     border-radius: 1rem 1rem 0 0;
     padding: 1rem;
@@ -36,17 +37,18 @@
     text-align: center;
   }
 }
-.input-container{
+
+.input-container {
   display: flex;
   flex-direction: row;
   padding: 0.4rem;
 
-  input{
+  input {
     width: 100%;
   }
 }
 
-.task{
+.task {
   background: white;
   margin: 0.3rem 0.5rem;
   padding: 0.5rem;
@@ -57,27 +59,42 @@
   justify-content: center;
   color: black;
   font-size: 1.2rem;
-  div{
+
+  div {
     width: 100%;
-    .taskDelete{
-      margin-left: auto;
-    }
   }
 }
-.btnDelete{
+
+.btnDelete {
   position: absolute;
   top: 0.2rem;
   right: 0.2rem;
   color: darken(#70a1ff, 50);;
-  &:hover{
+
+  &:hover {
     color: red;
     transition: all 0.5s;
+    cursor: pointer;
   }
 }
-.taskDelete{
+
+.taskDelete {
   font-weight: bold;
-  &:hover{
+  margin-left: 0.5rem;
+  &:hover {
     color: red;
     transition: all 0.5s;
+    cursor: pointer;
   }
+}
+
+.taskEdit {
+  margin-left: auto;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.columnEdit{
+  cursor: pointer;
 }

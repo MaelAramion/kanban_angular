@@ -109,5 +109,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cdk-drop-list-dragging .cdk-drag {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   font-family: 'font1', sans-serif !important;
+  cursor: grab !important ;
 }
 
