@@ -10,7 +10,7 @@
   <div class="input-container">
     <input (keydown.enter)="addTask()" type="text" [(ngModel)]="task.name"><button (click)="addTask()" class=""><i class="bi bi-plus-lg"></i></button>
   </div>
-  <div class="task" *ngFor="let tsk of tasks" cdkDrag>
+  <div class="task {{tsk.class}}" *ngFor="let tsk of tasks" cdkDrag>
     <div class="d-flex">
         {{ tsk.name }}
         <a (click)="openDialogTaskConsult(tsk.id)" class="SeeTask"><i class="bi bi-eye"></i></a>

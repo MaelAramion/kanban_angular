@@ -12,6 +12,7 @@ export interface DialogData {
   type: string;
   name: string;
   desc: string;
+  class: string;
 }
 
 @Component({
@@ -82,14 +83,16 @@ export class ColumnComponent implements OnInit {
 
       const dialogRef = this.dialog.open(EditDialogComponent, {
         width: '270px',
-        data: {name: task.name, type: "tâche", desc: task.desc},
+        data: {name: task.name, type: "tâche", desc: task.desc, class: task.class},
       });
 
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
+        console.log(result);
         if(result != null){
           task.name = result.name;
           task.desc = result.desc;
+          task.class = result.class;
         }
 
         this.DialogOpen = false;
