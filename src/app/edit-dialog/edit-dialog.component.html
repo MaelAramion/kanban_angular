@@ -9,7 +9,7 @@
     <textarea matInput [(ngModel)]="data.desc">{{data.desc}}</textarea>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" *ngIf="data.type == 'tâche'">
     <mat-label>Couleur </mat-label>
     <mat-select [(ngModel)]="data.class">
       <mat-option *ngFor="let classe of classes" [value]="classe.value">
